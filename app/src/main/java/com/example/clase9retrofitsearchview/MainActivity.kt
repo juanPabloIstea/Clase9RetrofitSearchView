@@ -75,10 +75,6 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener  {
         imm.hideSoftInputFromWindow(view.windowToken, 0);
     }
 
-    companion object {
-        const val URL_DOGS = "https://dog.ceo/api/"
-    }
-
     override fun onQueryTextSubmit(breedQuery: String?): Boolean {
         if(!breedQuery.isNullOrEmpty()) {
             searchBy(breedQuery.lowercase())
@@ -88,5 +84,9 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener  {
 
     override fun onQueryTextChange(newText: String?): Boolean {
         return true
+    }
+
+    companion object {
+        const val URL_DOGS = "https://dog.ceo/api/"
     }
 }
